@@ -22,7 +22,7 @@ export const StyledNavbar = styled.div`
           font-size: 46px;
           color: #dc143c;
           @media only screen and (max-width: ${props => props.theme.mobile}) {
-            font-size: 35px;
+            font-size: 25px;
           }
         }
       }
