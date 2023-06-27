@@ -1,6 +1,7 @@
-import React from 'react'
-import RecipeList from '../../components/RecipeList'
-import Search from '../../components/SearchComponent'
+import React from "react";
+
+import RecipeList from "../../components/RecipeList";
+import Search from "../../components/SearchComponent";
 
 const RecipesHome = () => {
   return (
@@ -8,7 +9,7 @@ const RecipesHome = () => {
       <RecipeList />
       <Search />
     </>
-  )
-}
+  );
+};
 
-export default RecipesHome
+export default RecipesHome;

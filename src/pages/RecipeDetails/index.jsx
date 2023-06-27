@@ -1,17 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import axios from 'axios';
-import { StyledRecipeDetails } from './RecipeDetails.Styled';
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+import axios from "axios";
+
+import { StyledRecipeDetails } from "./RecipeDetails.Styled";
 
 const RecipeDetails = () => {
   const { id, api } = useParams();
   const recipes = useSelector((state) => state.recipe.recipes);
   const [recipe, setRecipe] = useState(null);
   const [loading, setLoading] = useState(true);
-  console.log(id)
 
   useEffect(() => {
+    // fetch searched recipe details
     const fetchRecipeDetails = async () => {
       try {
         const response = await axios.get(
@@ -43,18 +44,21 @@ const RecipeDetails = () => {
     return <div>Recipe not found</div>;
   }
 
-  console.log(recipes)
-
   return (
     <StyledRecipeDetails>
       <div className="recipe-info">
-        <h2>{recipe.strMeal}</h2>
-        <p>Meal Type: {recipe.strTags}</p>
-        <p>Serves: {recipe.strMeasure1}</p>
-        <p>Difficulty: {recipe.difficulty}</p>
+        {recipe.strMeal && <h2>{recipe.strMeal}</h2>}
+        {recipe.strCategory && <p>Meal Type: {recipe.strCategory}</p>}
+        {recipe.serves && <p>Serves: {recipe.serves}</p>}
+        {recipe.difficulty && <p>Difficulty: {recipe.difficulty}</p>}
+        {recipe.strInstructions && (
+          <p>Instructions: {recipe.strInstructions}</p>
+        )}
       </div>
       <div className="recipe-image">
-        {recipe.strMealThumb && <img src={recipe.strMealThumb} alt={recipe.strMeal} />}
+        {recipe.strMealThumb && (
+          <img src={recipe.strMealThumb} alt={recipe.strMeal} />
+        )}
       </div>
     </StyledRecipeDetails>
   );

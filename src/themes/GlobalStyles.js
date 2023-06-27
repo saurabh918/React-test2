@@ -32,6 +32,10 @@ const GlobalStyle = createGlobalStyle` // styled component for global styling
     font-size: 23px;
   }
 
+  a h3:hover {
+    color: #964B00;
+  }
+
   p {
     font-size: 16px;
     line-height: 23px;

@@ -8,14 +8,13 @@ import WrapperComponent from "../WrapperComponent";
 // import styled components
 import { StyledHeader } from "./Header.Styled";
 
-
 const HeaderComponent = () => {
   return (
-      <StyledHeader>
-        <WrapperComponent>
-          <Navbar />
-        </WrapperComponent>
-      </StyledHeader>
+    <StyledHeader>
+      <WrapperComponent>
+        <Navbar />
+      </WrapperComponent>
+    </StyledHeader>
   );
 };
 

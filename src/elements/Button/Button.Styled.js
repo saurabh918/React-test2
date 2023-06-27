@@ -2,27 +2,31 @@ import { styled } from "styled-components";
 
 export const StyledButton = styled.button`
   display: block;
-  background-color: #ccc;
-  color: #fff;
-  padding: 10px 20px;
+  background-color: ${(props) => props.theme.primaryColor};
+  color: ${(props) => props.theme.primaryColor};
+  padding: ${(props) => props.theme.buttonPadding};
   border: none;
   cursor: pointer;
 
+  @media only screen and (max-width: ${(props) => props.theme.ipad}) {
+    padding: ${(props) => props.theme.buttonPadding};
+  }
+
   &:hover {
-    background-color: #aaa;
+    background-color: ${(props) => props.theme.hoverColor};
   }
 
   &.save-btn {
-    background-color: #3CB371;
+    background-color: ${(props) => props.theme.saveButtonColor};
     &:hover {
-      background-color: #013220;
+      background-color: ${(props) => props.theme.saveButtonHoverColor};
     }
   }
 
   &.del-btn {
-    background-color: #FF0000;
+    background-color: ${(props) => props.theme.deleteButtonColor};
     &:hover {
-      background-color: #8B0000;
+      background-color: ${(props) => props.theme.deleteButtonHoverColor};
     }
   }
-`
+`;

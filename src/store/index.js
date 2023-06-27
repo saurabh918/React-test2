@@ -8,17 +8,14 @@ let store;
 if (process.env.NODE_ENV === "development") {
   store = configureStore(
     {
-      reducer: { recipe:RecipeSlice,search: SearchSlice },
+      reducer: { recipe: RecipeSlice, search: SearchSlice },
     },
     composeWithDevTools()
   );
 } else {
-  store = configureStore(
-    {
-      reducer: { recipe:RecipeSlice,search: SearchSlice },
-    }
-  );
+  store = configureStore({
+    reducer: { recipe: RecipeSlice, search: SearchSlice },
+  });
 }
 
-export default store
- 
+export default store;

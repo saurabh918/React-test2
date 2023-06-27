@@ -1,10 +1,13 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React from "react";
+import { useSelector } from "react-redux";
 
-import RecipeCard from '../../components/RecipeCard';
+import RecipeCard from "../../components/RecipeCard";
 
-import { StyledSavedRecipes } from './SavedRecipes.Styled';
-import { StyledRecipeContainer, StyledRecipeList } from '../../components/RecipeList/RecipeList.Styled';
+import { StyledSavedRecipes } from "./SavedRecipes.Styled";
+import {
+  StyledRecipeContainer,
+  StyledRecipeList,
+} from "../../components/RecipeList/RecipeList.Styled";
 
 const SavedRecipes = () => {
   const savedRecipes = useSelector((state) => state.search.savedRecipes);
@@ -16,11 +19,16 @@ const SavedRecipes = () => {
         <p>No saved recipes found.</p>
       ) : (
         <StyledRecipeContainer>
-        <StyledRecipeList className="recipe-list">
-          {savedRecipes.map((recipe) => (
-            <RecipeCard key={recipe.idMeal} recipe={recipe} api="apiData" deleteBtn={true} />
-          ))}
-        </StyledRecipeList>
+          <StyledRecipeList className="recipe-list">
+            {savedRecipes.map((recipe) => (
+              <RecipeCard
+                key={recipe.idMeal}
+                recipe={recipe}
+                api="apiData"
+                deleteBtn={true}
+              />
+            ))}
+          </StyledRecipeList>
         </StyledRecipeContainer>
       )}
     </StyledSavedRecipes>

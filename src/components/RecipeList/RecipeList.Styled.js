@@ -6,7 +6,7 @@ export const StyledRecipeContainer = styled.div`
 
   h2 {
     font-size: 24px;
-    color: #333;
+    color: ${props => props.theme.secondaryColor};
     margin-bottom: 20px;
   }
 `;
@@ -15,4 +15,4 @@ export const StyledRecipeList = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-`
+`;
