@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "title": "Pancakes",
+    "mealType": "Breakfast",
+    "serves": 2,
+    "difficulty": "Beginner",
+    "ingredients": ["Ingredient 1", "Ingredient 2", "Ingredient 3"],
+    "preparationSteps": ["Step 1", "Step 2", "Step 3"],
+    "image": "/assets/images/pancakes.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Spaghetti Bolognese",
+    "mealType": "Lunch",
+    "serves": 4,
+    "difficulty": "Intermediate",
+    "ingredients": ["Ingredient 1", "Ingredient 2", "Ingredient 3"],
+    "preparationSteps": ["Step 1", "Step 2", "Step 3"],
+    "image": "/assets/images/spaghetti.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Grilled Chicken",
+    "mealType": "Lunch",
+    "serves": 2,
+    "difficulty": "Intermediate",
+    "ingredients": ["Ingredient 1", "Ingredient 2", "Ingredient 3"],
+    "preparationSteps": ["Step 1", "Step 2", "Step 3"],
+    "image": "/assets/images/grilled-chicken.webp"
+  },
+  {
+    "id": 4,
+    "title": "Burger",
+    "mealType": "Supper",
+    "serves": 1,
+    "difficulty": "Beginner",
+    "ingredients": ["Ingredient 1", "Ingredient 2", "Ingredient 3"],
+    "preparationSteps": ["Step 1", "Step 2", "Step 3"],
+    "image": "/assets/images/burger.avif"
+  },
+  {
+    "id": 5,
+    "title": "Caesar Salad",
+    "mealType": "Lunch",
+    "serves": 2,
+    "difficulty": "Intermediate",
+    "ingredients": ["Ingredient 1", "Ingredient 2", "Ingredient 3"],
+    "preparationSteps": ["Step 1", "Step 2", "Step 3"],
+    "image": "/assets/images/caesar-salad.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Fried Rice",
+    "mealType": "Supper",
+    "serves": 4,
+    "difficulty": "Intermediate",
+    "ingredients": ["Ingredient 1", "Ingredient 2", "Ingredient 3"],
+    "preparationSteps": ["Step 1", "Step 2", "Step 3"],
+    "image": "/assets/images/fried-rice.jpg"
+  },
+  {
+    "id": 7,
+    "title": "Cheesecake",
+    "mealType": "Snack",
+    "serves": 8,
+    "difficulty": "Advanced",
+    "ingredients": ["Ingredient 1", "Ingredient 2", "Ingredient 3"],
+    "preparationSteps": ["Step 1", "Step 2", "Step 3"],
+    "image": "/assets/images/cheesecake.jpg"
+  },
+  {
+    "id": 8,
+    "title": "Stir-Fried Noodles",
+    "mealType": "Supper",
+    "serves": 2,
+    "difficulty": "Intermediate",
+    "ingredients": ["Ingredient 1", "Ingredient 2", "Ingredient 3"],
+    "preparationSteps": ["Step 1", "Step 2", "Step 3"],
+    "image": "/assets/images/noodles.jpg"
+  }
+]
