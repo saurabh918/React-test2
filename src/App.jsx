@@ -7,7 +7,6 @@ import FooterComponent from "./components/Footer"
 
 function App() {
   return (
-    <>
       <BrowserRouter>
         <HeaderComponent />
           <main>
@@ -17,7 +16,6 @@ function App() {
           </main>
         <FooterComponent />
       </BrowserRouter>
-    </>
   );
 }
 
