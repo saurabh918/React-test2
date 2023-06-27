@@ -2,11 +2,12 @@
 import React from "react";
 
 // import from components
-import WrapperComponent from "../wrapper";
 import Navbar from "../navbar";
+import WrapperComponent from "../WrapperComponent";
 
 // import styled components
 import { StyledHeader } from "./header.styled";
+
 
 const HeaderComponent = () => {
   return (
