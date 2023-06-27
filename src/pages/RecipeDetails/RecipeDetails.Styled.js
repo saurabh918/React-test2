@@ -33,11 +33,11 @@ export const StyledRecipeDetails = styled.div`
   }
 
   .recipe-info {
-    flex-basis: 25%;
+    flex-basis: 40%;
   }
 
   .recipe-image {
-    flex-basis: 50%;
+    flex-basis: 30%;
     img {
       width: 300px;
     }

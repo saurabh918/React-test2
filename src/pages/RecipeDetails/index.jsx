@@ -5,8 +5,10 @@ import axios from "axios";
 
 import { deleteRecipe, saveRecipe } from "../../reducers/SearchSlice";
 
-import { StyledRecipeDetails } from "./RecipeDetails.Styled";
 import Button from "../../elements/Button";
+
+import { StyledRecipeDetails } from "./RecipeDetails.Styled";
+
 
 const RecipeDetails = () => {
   const { savedRecipes, recipes } = useSelector((state) => ({
@@ -14,16 +16,14 @@ const RecipeDetails = () => {
     recipes: state.recipe.recipes,
   }));
 
-  console.log(savedRecipes)
-
   const { id, api } = useParams();
+
+  const dispatch = useDispatch();
 
   const [recipe, setRecipe] = useState(null);
   const [loading, setLoading] = useState(true);
   const [errMsg,setErrMsg] = useState("");
   const [isRecipeSaved, setIsRecipeSaved] = useState(false);
-
-  const dispatch = useDispatch();
 
   useEffect(() => {
     // fetch searched recipe details
@@ -49,7 +49,6 @@ const RecipeDetails = () => {
       setLoading(false);
     }
   }, [id, api, recipes]);
-
 
   useEffect(() => {
     // Check if the current recipe is saved 
@@ -77,7 +76,7 @@ const RecipeDetails = () => {
 
   return (
     <>
-    <h2>Recipe Details</h2>
+    <h2 className="details-heading">Recipe Details</h2>
     <StyledRecipeDetails>
       {errMsg.length < 1 ? 
       

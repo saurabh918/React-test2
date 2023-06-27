@@ -36,6 +36,10 @@ const GlobalStyle = createGlobalStyle` // styled component for global styling
     color: #964B00;
   }
 
+  h2.details-heading {
+    margin: 10px 0 0 20px;
+  }
+
   p {
     font-size: 16px;
     line-height: 23px;
