@@ -1,20 +1,21 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { composeWithDevTools } from "@redux-devtools/extension";
 
-import { recipeSlice,searchSlice } from "../reducers/RecipeSlice";
+import RecipeSlice from "../reducers/RecipeSlice";
+import SearchSlice from "../reducers/SearchSlice";
 
 let store;
 if (process.env.NODE_ENV === "development") {
   store = configureStore(
     {
-      reducer: { recipeSlice,searchSlice },
+      reducer: { recipe:RecipeSlice,search: SearchSlice },
     },
     composeWithDevTools()
   );
 } else {
   store = configureStore(
     {
-      reducer: { recipeSlice,searchSlice },
+      reducer: { recipe:RecipeSlice,search: SearchSlice },
     }
   );
 }

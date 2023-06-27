@@ -7,7 +7,7 @@
     "difficulty": "Beginner",
     "ingredients": ["Ingredient 1", "Ingredient 2", "Ingredient 3"],
     "preparationSteps": ["Step 1", "Step 2", "Step 3"],
-    "image": "/assets/images/pancakes.jpg"
+    "image": "/assets/images/pancake.jpg"
   },
   {
     "id": 2,

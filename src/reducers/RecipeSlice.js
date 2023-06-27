@@ -2,18 +2,21 @@ import { createSlice } from "@reduxjs/toolkit";
 import { recipes } from "../data";
 
 const initialState = {
-  RecipeData: recipes,
+  recipes: recipes,
 };
 
-export const recipeSlice = createSlice({
+
+export const RecipeSlice = createSlice({
   name: "recipe",
   initialState,
   reducers: {
+    addRecipe: (state, action) => {
+      state.recipes.push(action.payload);
+    },
+    // Add more reducers as needed
   },
 });
 
-// Action creators are generated for each case reducer function
-export const {
-} = recipeSlice.actions;
+export const { addRecipe } = RecipeSlice.actions;
 
-export default recipeSlice.reducer;
+export default RecipeSlice.reducer;

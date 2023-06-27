@@ -2,10 +2,10 @@
 import React from "react";
 
 // import component
-import WrapperComponent from "../wrapper";
 
 // import styled component
 import { StyledFooter } from "./Footer.Styled";
+import WrapperComponent from "../WrapperComponent";
 
 const FooterComponent = () => {
   return (

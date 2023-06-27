@@ -2,8 +2,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { BsBook } from 'react-icons/bs';
-
 // import styled components
 import { StyledNavbar } from "./Navbar.Styled";
 
