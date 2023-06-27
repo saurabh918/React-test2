@@ -7,10 +7,7 @@ import RecipeCard from "../RecipeCard";
 import { setSearchResult } from "../../reducers/SearchSlice";
 
 import { StyledSearch } from "./SearchComponent.Styled";
-import {
-  StyledRecipeContainer,
-  StyledRecipeList,
-} from "../RecipeList/RecipeList.Styled";
+import { StyledRecipeContainer,StyledRecipeList} from "../RecipeList/RecipeList.Styled";
 
 const Search = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -49,16 +46,19 @@ const Search = () => {
         placeholder="search more recipes"
       />
       <StyledRecipeContainer>
-        <StyledRecipeList className="recipe-list">
+      <StyledRecipeList className="recipe-list">
           {searchQuery &&
-            searchResults &&
-            searchResults.map((recipe) => (
-              <RecipeCard
-                key={recipe.idMeal}
-                recipe={recipe}
-                api="apiData"
-                saveButton={true}
-              />
+            (searchResults && searchResults.length > 0 ? (
+              searchResults.map((recipe) => (
+                <RecipeCard
+                  key={recipe.idMeal}
+                  recipe={recipe}
+                  api="apiData"
+                  saveButton={true}
+                />
+              ))
+            ) : (
+              <p>No recipes found for <span className="search-query">{searchQuery}</span></p>
             ))}
         </StyledRecipeList>
       </StyledRecipeContainer>

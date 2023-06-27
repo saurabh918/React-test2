@@ -10,6 +10,7 @@ const RecipeDetails = () => {
   const recipes = useSelector((state) => state.recipe.recipes);
   const [recipe, setRecipe] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [errMsg,setErrMsg] = useState("");
 
   useEffect(() => {
     // fetch searched recipe details
@@ -22,7 +23,7 @@ const RecipeDetails = () => {
         setRecipe(recipeData);
         setLoading(false);
       } catch (error) {
-        console.error(error);
+        setErrMsg(error.toJSON().message)
         setLoading(false);
       }
     };
@@ -45,8 +46,12 @@ const RecipeDetails = () => {
   }
 
   return (
+    <>
+    <h2>Recipe Details</h2>
     <StyledRecipeDetails>
-      <div className="recipe-info">
+      {errMsg.length < 1 ? 
+      
+      (<><div className="recipe-info">
         {recipe.strMeal && <h2>{recipe.strMeal}</h2>}
         {recipe.strCategory && <p>Meal Type: {recipe.strCategory}</p>}
         {recipe.serves && <p>Serves: {recipe.serves}</p>}
@@ -59,8 +64,9 @@ const RecipeDetails = () => {
         {recipe.strMealThumb && (
           <img src={recipe.strMealThumb} alt={recipe.strMeal} />
         )}
-      </div>
+      </div></>) : (<h2>{errMsg}</h2>) }
     </StyledRecipeDetails>
+    </>
   );
 };
 

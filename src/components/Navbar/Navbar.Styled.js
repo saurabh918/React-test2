@@ -9,6 +9,7 @@ export const StyledNavbar = styled.div`
       list-style: none;
       a {
         margin: auto 20px;
+        color: #000;
         font-size: 25px;
         font-weight: bold;
         text-decoration: none;
@@ -20,6 +21,9 @@ export const StyledNavbar = styled.div`
         a {
           font-size: 46px;
           color: #dc143c;
+          @media only screen and (max-width: ${props => props.theme.mobile}) {
+            font-size: 35px;
+          }
         }
       }
     }

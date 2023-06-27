@@ -1,11 +1,18 @@
 // import from modules
 import React from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { FaBookmark } from 'react-icons/fa';
 
 // import styled components
 import { StyledNavbar } from "./Navbar.Styled";
 
 const Navbar = () => {
+
+  const savedRecipes = useSelector((state) => state.search.savedRecipes);
+
+  const savedRecipesCount = savedRecipes.length ? savedRecipes.length : 0;
+
   return (
     <StyledNavbar>
       <ul>
@@ -15,7 +22,7 @@ const Navbar = () => {
           </h1>
         </li>
         <li>
-          <Link to="/saved">Saved Recipes</Link>
+          <Link to="/saved"><FaBookmark /> Saved Recipes {savedRecipesCount}</Link>
         </li>
       </ul>
     </StyledNavbar>
