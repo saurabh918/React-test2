@@ -1,82 +1,90 @@
 [
   {
-    "id": 1,
-    "title": "Pancakes",
-    "mealType": "Breakfast",
+    "idMeal": "1",
+    "strMeal": "Salmon with Lemon Butter Sauce",
+    "strCategory": "Dinner",
     "serves": 2,
+    "difficulty": "Intermediate",
+    "ingredients": ["Ingredient 1", "Ingredient 2", "Ingredient 3"],
+    "preparationSteps": ["Step 1", "Step 2", "Step 3"],
+    "strMealThumb": "/assets/images/salmon.jpg",
+    "strArea": "china"
+  },
+  {
+    "idMeal": "2",
+    "strMeal": "Tacos",
+    "strCategory": "Dinner",
+    "serves": 4,
     "difficulty": "Beginner",
     "ingredients": ["Ingredient 1", "Ingredient 2", "Ingredient 3"],
     "preparationSteps": ["Step 1", "Step 2", "Step 3"],
-    "image": "/assets/images/pancake.jpg"
+    "strMealThumb": "/assets/images/tacos.avif",
+    "strArea": "nepal"
   },
   {
-    "id": 2,
-    "title": "Spaghetti Bolognese",
-    "mealType": "Lunch",
-    "serves": 4,
-    "difficulty": "Intermediate",
-    "ingredients": ["Ingredient 1", "Ingredient 2", "Ingredient 3"],
-    "preparationSteps": ["Step 1", "Step 2", "Step 3"],
-    "image": "/assets/images/spaghetti.jpg"
-  },
-  {
-    "id": 3,
-    "title": "Grilled Chicken",
-    "mealType": "Lunch",
+    "idMeal": "3",
+    "strMeal": "Grilled Chicken",
+    "strCategory": "Lunch",
     "serves": 2,
     "difficulty": "Intermediate",
     "ingredients": ["Ingredient 1", "Ingredient 2", "Ingredient 3"],
     "preparationSteps": ["Step 1", "Step 2", "Step 3"],
-    "image": "/assets/images/grilled-chicken.webp"
+    "strMealThumb": "/assets/images/grilled-chicken.webp",
+    "strArea": "Dubai"
   },
   {
-    "id": 4,
-    "title": "Burger",
-    "mealType": "Supper",
+    "idMeal": "4",
+    "strMeal": "Burger",
+    "strCategory": "Supper",
     "serves": 1,
     "difficulty": "Beginner",
     "ingredients": ["Ingredient 1", "Ingredient 2", "Ingredient 3"],
     "preparationSteps": ["Step 1", "Step 2", "Step 3"],
-    "image": "/assets/images/burger.avif"
+    "strMealThumb": "/assets/images/burger.avif",
+    "strArea": "USA"
   },
   {
-    "id": 5,
-    "title": "Caesar Salad",
-    "mealType": "Lunch",
+    "idMeal": "5",
+    "strMeal": "Caesar Salad",
+    "strCategory": "Lunch",
     "serves": 2,
     "difficulty": "Intermediate",
     "ingredients": ["Ingredient 1", "Ingredient 2", "Ingredient 3"],
     "preparationSteps": ["Step 1", "Step 2", "Step 3"],
-    "image": "/assets/images/caesar-salad.jpg"
+    "strMealThumb": "/assets/images/caesar-salad.jpg",
+    "strArea": "Briton"
   },
   {
-    "id": 6,
-    "title": "Fried Rice",
-    "mealType": "Supper",
+    "idMeal": "6",
+    "strMeal": "Fried Rice",
+    "strCategory": "Supper",
     "serves": 4,
     "difficulty": "Intermediate",
     "ingredients": ["Ingredient 1", "Ingredient 2", "Ingredient 3"],
     "preparationSteps": ["Step 1", "Step 2", "Step 3"],
-    "image": "/assets/images/fried-rice.jpg"
+    "strMealThumb": "/assets/images/fried-rice.jpg",
+    "strArea": "china"
   },
   {
-    "id": 7,
-    "title": "Cheesecake",
-    "mealType": "Snack",
+    "idMeal": "7",
+    "strMeal": "Cheesecake",
+    "strCategory": "Snack",
     "serves": 8,
     "difficulty": "Advanced",
     "ingredients": ["Ingredient 1", "Ingredient 2", "Ingredient 3"],
     "preparationSteps": ["Step 1", "Step 2", "Step 3"],
-    "image": "/assets/images/cheesecake.jpg"
+    "strMealThumb": "/assets/images/cheesecake.jpg",
+    "strArea": "SA"
   },
   {
-    "id": 8,
-    "title": "Stir-Fried Noodles",
-    "mealType": "Supper",
+    "idMeal": "8",
+    "strMeal": "Stir-Fried Noodles",
+    "strCategory": "Supper",
     "serves": 2,
     "difficulty": "Intermediate",
     "ingredients": ["Ingredient 1", "Ingredient 2", "Ingredient 3"],
     "preparationSteps": ["Step 1", "Step 2", "Step 3"],
-    "image": "/assets/images/noodles.jpg"
+    "strMealThumb": "/assets/images/noodles.jpg",
+    "strArea": "Taiwan"
   }
 ]

@@ -1,17 +1,46 @@
 import React from 'react';
-import { StyledRecipeCard } from './RecipeCard.Styled';
 import { Link } from 'react-router-dom';
 
-const RecipeCard = ({ recipe }) => {
+import { StyledRecipeCard } from './RecipeCard.Styled';
+import { useDispatch, useSelector } from 'react-redux';
+import { deleteRecipe, saveRecipe } from '../../reducers/SearchSlice';
+import Button from '../../elements/Button';
+
+
+const RecipeCard = ({ recipe,api,saveButton,deleteBtn }) => {
+
+  const dispatch = useDispatch();
+
+  const savedRecipes = useSelector((state) => state.search.savedRecipes);
+
+  const isRecipeSaved = savedRecipes.some((savedRecipe) => savedRecipe.idMeal === recipe.idMeal);
+
+  const handleSaveRecipe = () => {
+    // save searched recipe
+    dispatch(saveRecipe(recipe));
+  };
+
+  const handleDeleteRecipe = () => {
+    // delete recipe from saved
+    dispatch(deleteRecipe(recipe.idMeal));
+  };
+
   return (
     <StyledRecipeCard>
-      <Link key={recipe.id} to={`/recipes/${recipe.id}`}>
-      <h3>{recipe.title}</h3>
+      <Link key={recipe.idMeal} to={`/recipes/${recipe.idMeal}${api ? `/${api}` : ''}`}>
+        <h3>{recipe.strMeal}</h3>
       </Link>
-      <p>Meal Type: {recipe.mealType}</p>
-      <p>Serves: {recipe.serves}</p>
-      <p>Difficulty: {recipe.difficulty}</p>
-      {recipe.image && <img src={recipe.image} alt={recipe.title} />}
+      {recipe.strCategory && <p>Meal Type: {recipe.strCategory}</p>}
+      {recipe.serves && <p>Serves: {recipe.serves}</p>}
+      {recipe.strArea && <p>Area: {recipe.strArea}</p>}
+      {recipe.difficulty && <p>Difficulty: {recipe.difficulty}</p>}
+      {recipe.strMealThumb && <img src={recipe.strMealThumb} alt={recipe.title} />}
+      {saveButton && !isRecipeSaved && (
+        <Button type="button" className="save-btn" label="save" onClick={handleSaveRecipe} />
+      )}
+      {deleteBtn && (
+        <Button type="button" className="del-btn" label="delete" onClick={handleDeleteRecipe} />
+      )}
     </StyledRecipeCard>
   );
 };

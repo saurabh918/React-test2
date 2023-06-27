@@ -11,7 +11,12 @@ const Navbar = () => {
       <StyledNavbar>
         <ul>
           <li>
-            <Link to="/">Logo</Link>
+            <h1>
+            <Link to="/">Recipes</Link>
+            </h1>
+          </li>
+          <li>
+          <Link to="/saved">Saved Recipes</Link>
           </li>
         </ul>
       </StyledNavbar>
