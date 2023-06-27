@@ -1,16 +1,29 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 
+import { deleteRecipe, saveRecipe } from "../../reducers/SearchSlice";
+
 import { StyledRecipeDetails } from "./RecipeDetails.Styled";
+import Button from "../../elements/Button";
 
 const RecipeDetails = () => {
+  const { savedRecipes, recipes } = useSelector((state) => ({
+    savedRecipes: state.search.savedRecipes,
+    recipes: state.recipe.recipes,
+  }));
+
+  console.log(savedRecipes)
+
   const { id, api } = useParams();
-  const recipes = useSelector((state) => state.recipe.recipes);
+
   const [recipe, setRecipe] = useState(null);
   const [loading, setLoading] = useState(true);
   const [errMsg,setErrMsg] = useState("");
+  const [isRecipeSaved, setIsRecipeSaved] = useState(false);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     // fetch searched recipe details
@@ -36,6 +49,23 @@ const RecipeDetails = () => {
       setLoading(false);
     }
   }, [id, api, recipes]);
+
+
+  useEffect(() => {
+    // Check if the current recipe is saved 
+    const isSaved = savedRecipes.some((savedRecipe) => savedRecipe.idMeal === id);
+    setIsRecipeSaved(isSaved);
+  }, [savedRecipes, id]);
+
+  const handleSaveRecipe = () => {
+    dispatch(saveRecipe(recipe));
+  };
+
+  const handleDeleteRecipe = () => {
+    console.log("hit delete")
+    dispatch(deleteRecipe(recipe.idMeal));
+  };
+
 
   if (loading) {
     return <div>Loading...</div>;
@@ -64,7 +94,16 @@ const RecipeDetails = () => {
         {recipe.strMealThumb && (
           <img src={recipe.strMealThumb} alt={recipe.strMeal} />
         )}
-      </div></>) : (<h2>{errMsg}</h2>) }
+      </div>
+      {api &&
+      <div className="recipe-actions">
+              {isRecipeSaved ? (
+                <Button type="button" onClick={handleDeleteRecipe} className="del-btn" label="delete" />
+              ) : (
+                <Button type="button" onClick={handleSaveRecipe} className="save-btn" label="save" />
+              )}
+            </div>}
+      </>) : (<h2>{errMsg}</h2>) }
     </StyledRecipeDetails>
     </>
   );
