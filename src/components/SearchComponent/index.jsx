@@ -15,7 +15,7 @@ import { StyledRecipeContainer,StyledRecipeList} from "../RecipeList/RecipeList.
 
 const Search = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [searchButtonClicked, setSearchButtonClicked] = useState(false);
+  const [searchInitiated, setSearchInitiated] = useState(false);
   const [loading, setLoading] = useState(true);
 
   const dispatch = useDispatch();
@@ -24,22 +24,25 @@ const Search = () => {
 
   const handleInputChange = (e) => {
     setSearchQuery(e.target.value);
+    if (e.target.value === "") {
+      setSearchInitiated(false);
+    }
   };
 
   const handleSearch = () => {
-    setSearchButtonClicked(true)
+    setSearchInitiated(true);
     fetchRecipes();
   };
 
   const handleKeyPress = (e) => {
-    console.log("key enter")
     if (e.key === "Enter") {
-      setSearchButtonClicked(true);
+      setSearchInitiated(true);
       fetchRecipes();
     }
   };
 
   const fetchRecipes = async () => {
+    setLoading(true)
     try {
       const response = await axios.get(
         `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchQuery}`
@@ -64,8 +67,8 @@ const Search = () => {
       </div>
       <StyledRecipeContainer>
       <StyledRecipeList className="recipe-list">
-        {searchButtonClicked && loading ? <p>Loading</p> : 
-          (<>{searchQuery && searchButtonClicked &&
+        {searchInitiated  && loading ? <p>Loading</p> : 
+          (<>{searchQuery && searchInitiated  &&
             (searchResults && searchResults.length > 0 ? (
               searchResults.map((recipe) => (
                 <RecipeCard
