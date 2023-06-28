@@ -29,4 +29,13 @@ export const StyledButton = styled.button`
       background-color: ${(props) => props.theme.deleteButtonHoverColor};
     }
   }
+
+  &.search-btn {
+    background-color: #007bff;
+    color: #ffffff;
+
+    &:hover {
+    background-color: #0056b3;
+    }
+  }
 `;

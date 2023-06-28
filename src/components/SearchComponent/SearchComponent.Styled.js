@@ -5,6 +5,10 @@ export const StyledSearch = styled.div`
   padding: 10px;
   border-radius: 4px;
 
+  .search-section {
+    display: flex;
+  }
+
   input {
     margin-left: 5%;
     font-family: Arial, sans-serif;
