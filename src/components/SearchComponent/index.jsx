@@ -17,6 +17,7 @@ const Search = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchInitiated, setSearchInitiated] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [cardSize, setCartSize] = useState(4)
 
   const dispatch = useDispatch();
 
@@ -35,11 +36,26 @@ const Search = () => {
   };
 
   const handleKeyPress = (e) => {
-    if (e.key === "Enter") {
+    if (e.target.value !== "") {
       setSearchInitiated(true);
+      setCartSize(4)
       fetchRecipes();
     }
   };
+
+  const onScroll = () => {
+    const scrollTop = window.scrollY
+    const clientHeight = window.innerHeight
+    const scrollHeight = document.documentElement.scrollHeight
+    if(scrollTop + clientHeight + 2 >= scrollHeight) {
+      setCartSize(prev => prev + 4)
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", onScroll)
+    return () => window.removeEventListener("scroll", onScroll)
+  },[])
 
   const fetchRecipes = async () => {
     setLoading(true)
@@ -61,7 +77,7 @@ const Search = () => {
         type="text"
         value={searchQuery}
         onChange={handleInputChange}
-        onKeyDown={handleKeyPress}
+        onKeyUp={handleKeyPress}
         placeholder="search more recipes"
       /><Button onClick={handleSearch} label={<BiSearch />} type="button" className="search-btn" />
       </div>
@@ -70,7 +86,7 @@ const Search = () => {
         {searchInitiated  && loading ? <p>Loading</p> : 
           (<>{searchQuery && searchInitiated  &&
             (searchResults && searchResults.length > 0 ? (
-              searchResults.map((recipe) => (
+              searchResults.slice(0,cardSize).map((recipe) => (
                 <RecipeCard
                   key={recipe.idMeal}
                   recipe={recipe}
