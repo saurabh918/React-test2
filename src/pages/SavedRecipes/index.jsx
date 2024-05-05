@@ -15,7 +15,7 @@ const SavedRecipes = () => {
   return (
     <StyledSavedRecipes>
       <h2>Saved Recipes</h2>
-      {savedRecipes.length === 0 ? (
+      {savedRecipes.length === 0 ? ( 
         <p>No saved recipes found.</p>
       ) : (
         <StyledRecipeContainer>
