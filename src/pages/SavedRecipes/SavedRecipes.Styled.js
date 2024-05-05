@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 
 export const StyledSavedRecipes = styled.div`
   background-color: #f9f9f9;
-  padding: 20px;
+  padding: 20px; // commit 4
 
   h2 {
     font-size: 24px;
@@ -10,3 +10,5 @@ export const StyledSavedRecipes = styled.div`
     margin-bottom: 10px;
   }
 `;
+
+// commit 3
