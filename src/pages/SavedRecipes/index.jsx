@@ -12,8 +12,10 @@ import {
 const SavedRecipes = () => {
   const savedRecipes = useSelector((state) => state.search.savedRecipes);
 
+  // commit 2
+
   return (
-    <StyledSavedRecipes>
+    <StyledSavedRecipes> 
       <h2>Saved Recipes</h2>
       {savedRecipes.length === 0 ? ( 
         <p>No saved recipes found.</p>
