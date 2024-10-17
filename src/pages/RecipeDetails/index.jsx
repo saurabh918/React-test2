@@ -20,9 +20,11 @@ const RecipeDetails = () => {
 
   const dispatch = useDispatch();
 
-  const [recipe, setRecipe] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [errMsg,setErrMsg] = useState("");
+  const [ recipeDetailsData, setRecipeDetailsData ] = useState({
+    recipe: null,
+    loading: true,
+    errMsg: ""
+  })
   const [isRecipeSaved, setIsRecipeSaved] = useState(false);
 
   useEffect(() => {
@@ -33,11 +35,25 @@ const RecipeDetails = () => {
           `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`
         );
         const recipeData = response.data.meals[0];
-        setRecipe(recipeData);
-        setLoading(false);
+        // setRecipe(recipeData);
+        // setLoading(false);
+        setRecipeDetailsData(prev => {
+          return {
+            ...prev,
+            recipe: recipeData,
+            loading: false
+          }
+        })
       } catch (error) {
-        setErrMsg(error.toJSON().message)
-        setLoading(false);
+        // setErrMsg(error.toJSON().message)
+        // setLoading(false);
+        setRecipeDetailsData(prev => {
+          return {
+            ...prev,
+            errMsg: error.toJSON().message,
+            loading: false
+          }
+        })
       }
     };
 
@@ -45,10 +61,17 @@ const RecipeDetails = () => {
       fetchRecipeDetails();
     } else {
       const foundRecipe = recipes.find((recipe) => recipe.idMeal === id);
-      setRecipe(foundRecipe);
-      setLoading(false);
+      // setRecipe(foundRecipe);
+      // setLoading(false);
+      setRecipeDetailsData(prev => {
+        return {
+          ...prev,
+          recipe: foundRecipe,
+          loading: false
+        }
+      })
     }
-  }, [id, api, recipes]);
+  }, [id, api, recipes, setRecipeDetailsData]);
 
   useEffect(() => {
     // Check if the current recipe is saved 
@@ -61,9 +84,12 @@ const RecipeDetails = () => {
   };
 
   const handleDeleteRecipe = () => {
-    console.log("hit delete")
     dispatch(deleteRecipe(recipe.idMeal));
   };
+
+  console.log(recipeDetailsData, 'recipeDetailsData')
+
+  const { recipe,loading,errMsg } = recipeDetailsData
 
 
   if (loading) {

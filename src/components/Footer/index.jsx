@@ -11,7 +11,7 @@ const FooterComponent = () => {
   return (
     <StyledFooter>
       <WrapperComponent>
-        <span>&copy;Copyright 2023. All rights reserved &reg;</span>
+        <span>&copy;Copyright 2024. All rights reserved &reg;</span>
       </WrapperComponent>
     </StyledFooter>
   );

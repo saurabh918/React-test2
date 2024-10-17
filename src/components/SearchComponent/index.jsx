@@ -1,92 +1,52 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import axios from "axios";
-import { BiSearch } from "react-icons/bi";
+import _debounce from "lodash/debounce";
 
 import RecipeCard from "../RecipeCard";
-
-import Button from "../../elements/Button";
-
-import { setSearchResult } from "../../reducers/SearchSlice";
+import { searchRecipes } from "../../reducers/SearchSlice";
 
 import { StyledSearch } from "./SearchComponent.Styled";
-import { StyledRecipeContainer,StyledRecipeList} from "../RecipeList/RecipeList.Styled";
-
+import { StyledRecipeContainer, StyledRecipeList } from "../RecipeList/RecipeList.Styled";
 
 const Search = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [searchInitiated, setSearchInitiated] = useState(false);
-  const [loading, setLoading] = useState(true);
-  const [cardSize, setCartSize] = useState(4)
+  const [debouncedQuery, setDebouncedQuery] = useState("");
 
   const dispatch = useDispatch();
+  const {loading,searchResults} = useSelector((state) => state.search);
 
-  const searchResults = useSelector((state) => state.search.searchResults);
-
-  const handleInputChange = (e) => {
-    setSearchQuery(e.target.value);
-    if (e.target.value === "") {
-      setSearchInitiated(false);
-    }
-  };
-
-  const handleSearch = () => {
-    setSearchInitiated(true);
-    fetchRecipes();
-  };
-
-  const handleKeyPress = (e) => {
-    if (e.target.value !== "") {
-      setSearchInitiated(true);
-      setCartSize(4)
-      fetchRecipes();
-    }
-  };
-
-  const onScroll = () => {
-    const scrollTop = window.scrollY
-    const clientHeight = window.innerHeight
-    const scrollHeight = document.documentElement.scrollHeight
-    if(scrollTop + clientHeight + 2 >= scrollHeight) {
-      setCartSize(prev => prev + 4)
-    }
-  }
+  const debouncedSearch = useMemo(
+    () =>
+      _debounce((query) => {
+        setDebouncedQuery(query); // Set the debounced query after delay
+      }, 1000),
+    []
+  );
 
   useEffect(() => {
-    window.addEventListener("scroll", onScroll)
-    return () => window.removeEventListener("scroll", onScroll)
-  },[])
-
-  const fetchRecipes = async () => {
-    setLoading(true)
-    try {
-      const response = await axios.get(
-        `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchQuery}`
-      );
-      dispatch(setSearchResult(response.data.meals));
-      setLoading(false)
-    } catch (error) {
-      setLoading(false)
+    if (debouncedQuery) {
+      dispatch(searchRecipes(debouncedQuery));
     }
-  };
+  }, [debouncedQuery, dispatch]);
 
+  const handleInputChange = (e) => {
+    const query = e.target.value;
+    setSearchQuery(query);
+    debouncedSearch(query); // Trigger the debounced function
+  };
   return (
     <StyledSearch>
-      <div className="search-section">
       <input
         type="text"
         value={searchQuery}
         onChange={handleInputChange}
-        onKeyUp={handleKeyPress}
         placeholder="search more recipes"
-      /><Button onClick={handleSearch} label={<BiSearch />} type="button" className="search-btn" />
-      </div>
+      />
       <StyledRecipeContainer>
-      <StyledRecipeList className="recipe-list">
-        {searchInitiated  && loading ? <p>Loading</p> : 
-          (<>{searchQuery && searchInitiated  &&
+        <StyledRecipeList className="recipe-list">
+          {loading ? (<div>Loading...</div>) : searchQuery &&
             (searchResults && searchResults.length > 0 ? (
-              searchResults.slice(0,cardSize).map((recipe) => (
+              searchResults.map((recipe) => (
                 <RecipeCard
                   key={recipe.idMeal}
                   recipe={recipe}
@@ -94,9 +54,11 @@ const Search = () => {
                   saveButton={true}
                 />
               ))
-            ) : (
+            ) : loading === null ? (<>
+              <p>Loading...</p>
+            </>) : (
               <p>No recipes found for <span className="search-query">{searchQuery}</span></p>
-            ))}</>)}
+            ))}
         </StyledRecipeList>
       </StyledRecipeContainer>
     </StyledSearch>

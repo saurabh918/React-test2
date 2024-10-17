@@ -51,11 +51,11 @@ const RecipeCard = ({ recipe, api, saveButton, deleteBtn }) => {
           onClick={handleSaveRecipe}
         />
       )}
-      {deleteBtn && (
+      {(deleteBtn || isRecipeSaved) && (
         <Button
           type="button"
           className="del-btn"
-          label="delete"
+          label="Remove from saved"
           onClick={handleDeleteRecipe}
         />
       )}
