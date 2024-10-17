@@ -1,42 +1,39 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import axios from "axios";
+import _debounce from "lodash/debounce";
 
 import RecipeCard from "../RecipeCard";
-
-import { setSearchResult } from "../../reducers/SearchSlice";
+import { searchRecipes } from "../../reducers/SearchSlice";
 
 import { StyledSearch } from "./SearchComponent.Styled";
-import { StyledRecipeContainer,StyledRecipeList} from "../RecipeList/RecipeList.Styled";
+import { StyledRecipeContainer, StyledRecipeList } from "../RecipeList/RecipeList.Styled";
 
 const Search = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const [debouncedQuery, setDebouncedQuery] = useState("");
 
   const dispatch = useDispatch();
+  const {loading,searchResults} = useSelector((state) => state.search);
 
-  const searchResults = useSelector((state) => state.search.searchResults);
-
-  const handleInputChange = (e) => {
-    //Update search value when user starts to write
-    setSearchQuery(e.target.value);
-  };
+  const debouncedSearch = useMemo(
+    () =>
+      _debounce((query) => {
+        setDebouncedQuery(query); // Set the debounced query after delay
+      }, 1000),
+    []
+  );
 
   useEffect(() => {
-    // fetch recipes when search value is updated
-    const fetchRecipes = async () => {
-      try {
-        const response = await axios.get(
-          `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchQuery}`
-        );
-        dispatch(setSearchResult(response.data.meals));
-      } catch (error) {
-        console.error(error);
-      }
-    };
+    if (debouncedQuery) {
+      dispatch(searchRecipes(debouncedQuery));
+    }
+  }, [debouncedQuery, dispatch]);
 
-    fetchRecipes();
-  }, [searchQuery, dispatch]);
-
+  const handleInputChange = (e) => {
+    const query = e.target.value;
+    setSearchQuery(query);
+    debouncedSearch(query); // Trigger the debounced function
+  };
   return (
     <StyledSearch>
       <input
@@ -46,8 +43,8 @@ const Search = () => {
         placeholder="search more recipes"
       />
       <StyledRecipeContainer>
-      <StyledRecipeList className="recipe-list">
-          {searchQuery &&
+        <StyledRecipeList className="recipe-list">
+          {loading ? (<div>Loading...</div>) : searchQuery &&
             (searchResults && searchResults.length > 0 ? (
               searchResults.map((recipe) => (
                 <RecipeCard
@@ -57,7 +54,9 @@ const Search = () => {
                   saveButton={true}
                 />
               ))
-            ) : (
+            ) : loading === null ? (<>
+              <p>Loading...</p>
+            </>) : (
               <p>No recipes found for <span className="search-query">{searchQuery}</span></p>
             ))}
         </StyledRecipeList>

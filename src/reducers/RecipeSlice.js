@@ -9,11 +9,6 @@ const initialState = {
 export const RecipeSlice = createSlice({
   name: "recipe",
   initialState,
-  reducers: {
-    // Add more reducers as needed
-  },
 });
-
-export const { } = RecipeSlice.actions;
 
 export default RecipeSlice.reducer;
