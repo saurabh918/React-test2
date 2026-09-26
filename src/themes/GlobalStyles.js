@@ -55,7 +55,7 @@ const GlobalStyle = createGlobalStyle`
   @keyframes appFadeInUp {
     from {
       opacity: 0;
-      transform: translateY(10px);
+      transform: translateY(8px);
     }
     to {
       opacity: 1;

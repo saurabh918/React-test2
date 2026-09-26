@@ -14,8 +14,8 @@ export const StyledRecipeCard = styled.article`
   border-radius: ${(props) => props.theme.cardRadius};
   box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
   overflow: visible;
-  transition: box-shadow 0.22s ease, border-color 0.18s ease,
-    transform 0.22s ease;
+  transition: box-shadow 0.25s ease, border-color 0.2s ease,
+    transform 0.25s ease;
 
   .card-actions {
     display: flex;
@@ -30,8 +30,8 @@ export const StyledRecipeCard = styled.article`
   @media (hover: hover) and (pointer: fine) {
     &:hover {
       border-color: ${(props) => props.theme.borderColorHover};
-      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.1);
-      transform: translateY(-3px);
+      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.09);
+      transform: translateY(-2px);
     }
   }
 
@@ -73,7 +73,7 @@ export const StyledImageFrame = styled.div`
     object-fit: cover;
     display: block;
     transform: scale(1);
-    transition: transform 0.25s ease;
+    transition: transform 0.28s ease;
   }
 
   ${StyledRecipeCard}:hover & img {

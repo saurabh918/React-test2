@@ -161,6 +161,14 @@ export const StyledContentSection = styled.section`
   @media only screen and (max-width: ${(props) => props.theme.mobile}) {
     padding: 1rem;
   }
+
+  & + & {
+    animation-delay: 60ms;
+
+    @media (prefers-reduced-motion: reduce) {
+      animation-delay: 0ms;
+    }
+  }
 `;
 
 export const StyledIngredientList = styled.ul`
@@ -310,11 +318,11 @@ export const StyledLoadingSkeleton = styled.div`
     background-image: linear-gradient(
       90deg,
       ${(props) => props.theme.pageBackground} 0%,
-      #e9ecef 50%,
+      #eceff1 50%,
       ${(props) => props.theme.pageBackground} 100%
     );
     background-size: 200% 100%;
-    animation: appSkeletonShimmer 1.8s ease-in-out infinite;
+    animation: appSkeletonShimmer 2s ease-in-out infinite;
 
     @media (prefers-reduced-motion: reduce) {
       animation: none;

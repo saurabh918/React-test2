@@ -5,8 +5,23 @@
     "strCategory": "Dinner",
     "serves": 2,
     "difficulty": "Intermediate",
-    "ingredients": ["Ingredient 1", "Ingredient 2", "Ingredient 3"],
-    "preparationSteps": ["Step 1", "Step 2", "Step 3"],
+    "ingredients": [
+      "Salmon fillets",
+      "Unsalted butter",
+      "Fresh lemon juice",
+      "Garlic cloves",
+      "Fresh dill",
+      "Olive oil",
+      "Salt",
+      "Black pepper"
+    ],
+    "preparationSteps": [
+      "Pat the salmon dry, season with salt and pepper, and brush lightly with olive oil.",
+      "Roast or pan-sear the salmon until the flesh is just opaque and flakes easily.",
+      "Melt butter in a small pan with minced garlic; cook briefly until fragrant.",
+      "Stir in lemon juice and chopped dill, then season the sauce to taste.",
+      "Spoon the lemon butter sauce over the salmon and serve immediately."
+    ],
     "strMealThumb": "/assets/images/salmon.jpg",
     "strArea": "china",
     "strInstructions": "Slow roasting salmon is a game changer. It’s my favorite way to eat salmon because the flesh is PERFECTLY cooked, it’s buttery and melt-in-your-mouth delicious, and so simple to cook. Plus, you can season and baste the salmon with your favorite seasonings or marinade."
@@ -17,8 +32,24 @@
     "strCategory": "Dinner",
     "serves": 4,
     "difficulty": "Beginner",
-    "ingredients": ["Ingredient 1", "Ingredient 2", "Ingredient 3"],
-    "preparationSteps": ["Step 1", "Step 2", "Step 3"],
+    "ingredients": [
+      "Ground beef",
+      "Small taco shells",
+      "Onion",
+      "Tomato",
+      "Shredded lettuce",
+      "Grated cheddar cheese",
+      "Taco seasoning",
+      "Vegetable oil",
+      "Salt"
+    ],
+    "preparationSteps": [
+      "Dice the onion and tomato; shred the lettuce and grate the cheese.",
+      "Brown the ground beef in oil, breaking it up until fully cooked.",
+      "Add taco seasoning and a splash of water; simmer until the mixture thickens.",
+      "Warm the taco shells in the oven or in a dry pan.",
+      "Fill each shell with beef, then top with lettuce, tomato, and cheese."
+    ],
     "strMealThumb": "/assets/images/tacos.avif",
     "strArea": "nepal",
     "strInstructions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
@@ -29,8 +60,23 @@
     "strCategory": "Lunch",
     "serves": 2,
     "difficulty": "Intermediate",
-    "ingredients": ["Ingredient 1", "Ingredient 2", "Ingredient 3"],
-    "preparationSteps": ["Step 1", "Step 2", "Step 3"],
+    "ingredients": [
+      "Boneless chicken breasts",
+      "Olive oil",
+      "Lemon juice",
+      "Garlic cloves",
+      "Smoked paprika",
+      "Dried oregano",
+      "Salt",
+      "Black pepper"
+    ],
+    "preparationSteps": [
+      "Mix olive oil, lemon juice, minced garlic, paprika, oregano, salt, and pepper.",
+      "Coat the chicken in the marinade and rest for at least 20 minutes.",
+      "Preheat the grill or grill pan to medium-high heat.",
+      "Grill the chicken until charred outside and cooked through, turning once.",
+      "Rest for a few minutes, slice, and serve."
+    ],
     "strMealThumb": "/assets/images/grilled-chicken.webp",
     "strArea": "Dubai",
     "strInstructions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
@@ -41,8 +87,25 @@
     "strCategory": "Supper",
     "serves": 1,
     "difficulty": "Beginner",
-    "ingredients": ["Ingredient 1", "Ingredient 2", "Ingredient 3"],
-    "preparationSteps": ["Step 1", "Step 2", "Step 3"],
+    "ingredients": [
+      "Ground beef",
+      "Burger bun",
+      "Lettuce leaves",
+      "Tomato slice",
+      "Red onion slice",
+      "Cheddar cheese slice",
+      "Pickle slices",
+      "Ketchup",
+      "Salt",
+      "Black pepper"
+    ],
+    "preparationSteps": [
+      "Season the ground beef lightly with salt and pepper and shape into a patty.",
+      "Cook the patty in a hot pan until browned and cooked to your liking.",
+      "Add the cheese slice in the last minute so it melts.",
+      "Toast the bun cut sides until golden.",
+      "Stack the patty, lettuce, tomato, onion, pickles, and ketchup on the bun."
+    ],
     "strMealThumb": "/assets/images/burger.avif",
     "strArea": "USA",
     "strInstructions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
@@ -53,8 +116,24 @@
     "strCategory": "Lunch",
     "serves": 2,
     "difficulty": "Intermediate",
-    "ingredients": ["Ingredient 1", "Ingredient 2", "Ingredient 3"],
-    "preparationSteps": ["Step 1", "Step 2", "Step 3"],
+    "ingredients": [
+      "Romaine lettuce",
+      "Parmesan cheese",
+      "Croutons",
+      "Lemon juice",
+      "Garlic clove",
+      "Anchovy paste",
+      "Egg yolk",
+      "Extra-virgin olive oil",
+      "Black pepper"
+    ],
+    "preparationSteps": [
+      "Wash and chop the romaine into bite-sized pieces; pat dry.",
+      "Whisk garlic, anchovy paste, egg yolk, and lemon juice until smooth.",
+      "Slowly whisk in olive oil to make a creamy dressing.",
+      "Toss the lettuce with dressing, parmesan, and croutons.",
+      "Finish with extra parmesan and freshly cracked black pepper."
+    ],
     "strMealThumb": "/assets/images/caesar-salad.jpg",
     "strArea": "Briton",
     "strInstructions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
@@ -65,8 +144,25 @@
     "strCategory": "Supper",
     "serves": 4,
     "difficulty": "Intermediate",
-    "ingredients": ["Ingredient 1", "Ingredient 2", "Ingredient 3"],
-    "preparationSteps": ["Step 1", "Step 2", "Step 3"],
+    "ingredients": [
+      "Cooked long-grain rice",
+      "Eggs",
+      "Frozen peas",
+      "Carrot",
+      "Green onions",
+      "Garlic cloves",
+      "Soy sauce",
+      "Sesame oil",
+      "Vegetable oil",
+      "Salt"
+    ],
+    "preparationSteps": [
+      "Use day-old rice if possible; dice the carrot and slice the green onions.",
+      "Scramble the eggs in a hot wok with a little oil; set aside.",
+      "Stir-fry garlic, carrot, and peas until tender.",
+      "Add the rice and stir-fry until heated through and lightly crisp in spots.",
+      "Return the eggs, season with soy sauce, sesame oil, and salt, then garnish with green onions."
+    ],
     "strMealThumb": "/assets/images/fried-rice.jpg",
     "strArea": "china",
     "strInstructions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
@@ -77,8 +173,23 @@
     "strCategory": "Snack",
     "serves": 8,
     "difficulty": "Advanced",
-    "ingredients": ["Ingredient 1", "Ingredient 2", "Ingredient 3"],
-    "preparationSteps": ["Step 1", "Step 2", "Step 3"],
+    "ingredients": [
+      "Graham crackers",
+      "Unsalted butter",
+      "Cream cheese",
+      "Granulated sugar",
+      "Eggs",
+      "Sour cream",
+      "Vanilla extract",
+      "Salt"
+    ],
+    "preparationSteps": [
+      "Crush graham crackers and mix with melted butter; press into a springform pan.",
+      "Beat cream cheese and sugar until smooth, then mix in eggs one at a time.",
+      "Fold in sour cream, vanilla, and a pinch of salt.",
+      "Pour the filling over the crust and bake in a water bath until set with a slight jiggle.",
+      "Cool completely, then refrigerate for several hours before slicing."
+    ],
     "strMealThumb": "/assets/images/cheesecake.jpg",
     "strArea": "SA",
     "strInstructions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
@@ -89,8 +200,26 @@
     "strCategory": "Supper",
     "serves": 2,
     "difficulty": "Intermediate",
-    "ingredients": ["Ingredient 1", "Ingredient 2", "Ingredient 3"],
-    "preparationSteps": ["Step 1", "Step 2", "Step 3"],
+    "ingredients": [
+      "Dried wheat noodles",
+      "Cabbage",
+      "Carrot",
+      "Bell pepper",
+      "Green onions",
+      "Garlic cloves",
+      "Fresh ginger",
+      "Soy sauce",
+      "Oyster sauce",
+      "Sesame oil",
+      "Vegetable oil"
+    ],
+    "preparationSteps": [
+      "Cook the noodles until al dente, drain, and toss with a little sesame oil.",
+      "Slice the cabbage, carrot, and bell pepper; mince garlic and ginger.",
+      "Stir-fry garlic and ginger in hot oil until aromatic.",
+      "Add the vegetables and stir-fry until crisp-tender.",
+      "Add noodles, soy sauce, and oyster sauce; toss on high heat until evenly coated and serve topped with green onions."
+    ],
     "strMealThumb": "/assets/images/noodles.jpg",
     "strArea": "Taiwan",
     "strInstructions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."

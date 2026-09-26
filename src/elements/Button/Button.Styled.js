@@ -18,6 +18,16 @@ export const StyledButton = styled.button`
   cursor: pointer;
   ${interactivePress}
 
+  &:active {
+    transform: scale(0.99);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &:active {
+      transform: none;
+    }
+  }
+
   &:focus-visible {
     outline: 2px solid ${(props) => props.theme.secondaryColor};
     outline-offset: 2px;

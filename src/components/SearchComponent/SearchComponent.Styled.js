@@ -101,11 +101,11 @@ export const StyledSearchSkeletonGrid = styled.div`
     background-image: linear-gradient(
       90deg,
       ${(props) => props.theme.pageBackground} 0%,
-      #e9ecef 50%,
+      #eceff1 50%,
       ${(props) => props.theme.pageBackground} 100%
     );
     background-size: 200% 100%;
-    animation: appSkeletonShimmer 1.8s ease-in-out infinite;
+    animation: appSkeletonShimmer 2s ease-in-out infinite;
 
     @media (prefers-reduced-motion: reduce) {
       animation: none;
