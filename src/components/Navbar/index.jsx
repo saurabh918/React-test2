@@ -1,30 +1,36 @@
-// import from modules
 import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { FaBookmark } from 'react-icons/fa';
+import { FaBookmark } from "react-icons/fa";
 
-// import styled components
 import { StyledNavbar } from "./Navbar.Styled";
 
 const Navbar = () => {
-
   const savedRecipes = useSelector((state) => state.search.savedRecipes);
+  const savedRecipesCount = savedRecipes.length;
 
-  const savedRecipesCount = savedRecipes.length ? savedRecipes.length : 0;
+  const savedLinkLabel =
+    savedRecipesCount > 0
+      ? `Saved recipes, ${savedRecipesCount} saved`
+      : "Saved recipes";
 
   return (
-    <StyledNavbar>
-      <ul>
-        <li>
-          <h1>
-            <Link to="/">Recipes</Link>
-          </h1>
-        </li>
-        <li>
-          <Link to="/saved"><FaBookmark /> Saved Recipes {savedRecipesCount}</Link>
-        </li>
-      </ul>
+    <StyledNavbar aria-label="Main">
+      <div className="site-brand">
+        <Link to="/">Recipes</Link>
+      </div>
+      <Link to="/saved" className="saved-link" aria-label={savedLinkLabel}>
+        <FaBookmark aria-hidden="true" />
+        <span className="saved-label-full" aria-hidden="true">
+          Saved recipes
+        </span>
+        <span className="saved-label-short" aria-hidden="true">
+          Saved
+        </span>
+        <span className="count" aria-hidden="true">
+          {savedRecipesCount}
+        </span>
+      </Link>
     </StyledNavbar>
   );
 };

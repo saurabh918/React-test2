@@ -2,9 +2,14 @@ import React from "react";
 
 import { StyledButton } from "./Button.Styled";
 
-const Button = ({ type, onClick, label, className }) => {
+const Button = ({ type, onClick, label, className, ariaLabel }) => {
   return (
-    <StyledButton type={type} onClick={onClick} className={className}>
+    <StyledButton
+      type={type}
+      onClick={onClick}
+      className={className}
+      aria-label={ariaLabel}
+    >
       {label}
     </StyledButton>
   );

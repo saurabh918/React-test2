@@ -9,8 +9,8 @@ import PageNotFound from "../pages/PageNotFound";
 const RoutesComponent = () => {
   return (
       <Routes>
-        <Route exact path="/" element={<RecipesHome />} />
-        <Route exact path="/saved" element={<SavedRecipes />} />
+        <Route path="/" element={<RecipesHome />} />
+        <Route path="/saved" element={<SavedRecipes />} />
         <Route path="/recipes/:id/:api" element={<RecipeDetails />} />
         <Route path="/recipes/:id" element={<RecipeDetails />} />
         <Route path="*" element={<PageNotFound />} />

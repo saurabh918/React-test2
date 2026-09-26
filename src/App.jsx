@@ -9,7 +9,7 @@ function App() {
   return (
       <BrowserRouter>
         <HeaderComponent />
-          <main>
+          <main id="main-content">
             <WrapperComponent>
               <RoutesComponent />
             </WrapperComponent>

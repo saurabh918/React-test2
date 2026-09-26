@@ -1,23 +1,37 @@
 export const theme = {
-  // color values
   primaryColor: "#fff",
-  secondaryColor: "#333",
+  secondaryColor: "#1f2937",
+  textMuted: "#6b7280",
+  pageBackground: "#f3f4f6",
+  surfaceColor: "#ffffff",
+  borderColor: "#e5e7eb",
+  brandColor: "#c41e3a",
+  brandColorHover: "#9f1830",
   hoverColor: "#aaa",
-  saveButtonColor: "#3CB371",
-  saveButtonHoverColor: "#013220",
-  deleteButtonColor: "#FF0000",
-  deleteButtonHoverColor: "#8B0000",
-
-  // media devices 
+  saveButtonColor: "#059669",
+  saveButtonHoverColor: "#047857",
+  deleteButtonColor: "#dc2626",
+  deleteButtonHoverColor: "#b91c1c",
+  errorSurface: "#fef2f2",
+  errorBorder: "#fecaca",
+  errorHeading: "#991b1b",
+  placeholderColor: "#9ca3af",
+  borderColorHover: "#d1d5db",
 
   ipad: "992px",
   tab: "1024px",
-  desktop: "1400px",
+  desktop: "1200px",
   mobile: "767px",
   mobileSmall: "400px",
   mobileMedium: "576px",
+  gridSingleColumn: "640px",
 
-  //additional
-  buttonPadding: "5px 10px",
-  borderRadius: "5px",
+  buttonPadding: "0.625rem 1rem",
+  borderRadius: "8px",
+  cardRadius: "12px",
+
+  fontSizeSectionTitle: "1.25rem",
+  fontSizeLead: "0.9375rem",
+  fontSizeFooter: "0.8125rem",
+  lineHeightLead: "1.5",
 };

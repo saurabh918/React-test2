@@ -1,41 +1,53 @@
 import { styled } from "styled-components";
 
+import { interactivePress } from "../../themes/motion";
+
 export const StyledButton = styled.button`
-  display: block;
-  background-color: ${(props) => props.theme.primaryColor};
-  color: ${(props) => props.theme.primaryColor};
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 2.75rem;
   padding: ${(props) => props.theme.buttonPadding};
   border: none;
+  border-radius: ${(props) => props.theme.borderRadius};
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.2;
   cursor: pointer;
+  ${interactivePress}
 
-  @media only screen and (max-width: ${(props) => props.theme.ipad}) {
-    padding: ${(props) => props.theme.buttonPadding};
-  }
-
-  &:hover {
-    background-color: ${(props) => props.theme.hoverColor};
+  &:focus-visible {
+    outline: 2px solid ${(props) => props.theme.secondaryColor};
+    outline-offset: 2px;
   }
 
   &.save-btn {
     background-color: ${(props) => props.theme.saveButtonColor};
+    color: #ffffff;
+
     &:hover {
       background-color: ${(props) => props.theme.saveButtonHoverColor};
+      box-shadow: 0 2px 8px rgba(5, 150, 105, 0.25);
+    }
+
+    &:focus-visible {
+      outline-color: ${(props) => props.theme.saveButtonColor};
     }
   }
 
   &.del-btn {
     background-color: ${(props) => props.theme.deleteButtonColor};
-    &:hover {
-      background-color: ${(props) => props.theme.deleteButtonHoverColor};
-    }
-  }
-
-  &.search-btn {
-    background-color: #007bff;
     color: #ffffff;
 
     &:hover {
-    background-color: #0056b3;
+      background-color: ${(props) => props.theme.deleteButtonHoverColor};
+      box-shadow: 0 2px 8px rgba(220, 38, 38, 0.22);
+    }
+
+    &:focus-visible {
+      outline-color: ${(props) => props.theme.deleteButtonColor};
     }
   }
 `;
