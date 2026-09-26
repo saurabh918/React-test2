@@ -31,7 +31,7 @@ Saved recipes are stored under the key `savedRecipes` in the browser’s localSt
 
 ## Run locally
 
-**Prerequisites:** Node.js 16+ and npm
+**Prerequisites:** Node.js 24 LTS and npm
 
 ```bash
 npm install
